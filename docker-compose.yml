@@ -1,0 +1,20 @@
+postgres:
+  image: postgres:latest
+  container_name: postgres-account-read
+  environment:
+    - "TZ=Europe/Amsterdam"
+    - "POSTGRES_USER=docker"
+    - "POSTGRES_PASSWORD=docker"
+  ports:
+    - "5432:5432"  # credentials (docker:docker)
+
+
+postgres-alt:
+  image: postgres:latest
+  container_name: postgres-account-write
+  environment:
+    - "TZ=Europe/Amsterdam"
+    - "POSTGRES_USER=docker"
+    - "POSTGRES_PASSWORD=docker"
+  ports:
+    - "5433:5432"  # credentials (docker:docker)
